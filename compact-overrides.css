@@ -1,0 +1,342 @@
+﻿/* Compact Landing Page Layout - Override styles for single viewport fit */
+
+/* Main container constraints */
+.landing-screen {
+  min-height: 100vh;
+  max-height: 100vh;
+  padding: 0.75rem !important;
+  overflow: hidden !important;
+}
+
+.landing-container {
+  max-width: 900px !important;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Compact header */
+.landing-header {
+  margin-bottom: 0.75rem !important;
+}
+
+.landing-title {
+  font-size: 2.25rem !important;
+  margin-bottom: 0.35rem !important;
+}
+
+.landing-subtitle {
+  font-size: 0.95rem !important;
+}
+
+/* Compact section titles */
+.section-title {
+  font-size: 1.1rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+/* Compact search section */
+.search-section {
+  margin-bottom: 0.75rem !important;
+}
+
+.search-input-wrapper {
+  margin: 0 auto 0.35rem !important;
+}
+
+.search-input {
+  padding: 0.75rem 2.75rem 0.75rem 1rem !important;
+  font-size: 0.95rem !important;
+}
+
+.search-icon {
+  right: 0.875rem !important;
+  font-size: 1.1rem !important;
+}
+
+.search-hint {
+  font-size: 0.85rem !important;
+}
+
+/* Compact cuisine grid - Show 8 cards in 4x2 layout */
+.cuisine-selection {
+  margin-bottom: 1rem !important;
+  flex-shrink: 1;
+  overflow: hidden;
+}
+
+.cuisine-grid {
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 0.5rem !important;
+  margin-bottom: 0 !important;
+}
+
+.cuisine-card {
+  padding: 0.5rem 0.35rem !important;
+  border-radius: 8px !important;
+}
+
+/* Hide cuisine cards beyond 8 to maintain layout */
+.cuisine-card:nth-child(n+9) {
+  display: none !important;
+}
+
+.cuisine-emoji {
+  font-size: 1.5rem !important;
+  margin-bottom: 0.15rem !important;
+}
+
+.cuisine-name {
+  font-size: 0.75rem !important;
+}
+
+/* Prominent action buttons */
+.action-buttons {
+  gap: 0.875rem !important;
+  margin-top: auto;
+  padding-top: 0.875rem !important;
+  flex-shrink: 0;
+}
+
+.btn {
+  padding: 1rem 2rem !important;
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35) !important;
+  min-width: 180px !important;
+  justify-content: center;
+}
+
+.btn-icon {
+  font-size: 1.2rem !important;
+}
+
+/* Mobile responsiveness for compact layout */
+@media (max-height: 800px) {
+  .landing-title {
+    font-size: 2rem !important;
+  }
+
+  .section-title {
+    font-size: 1rem !important;
+  }
+
+  .cuisine-emoji {
+    font-size: 1.5rem !important;
+  }
+
+  .btn {
+    padding: 0.875rem 1.75rem !important;
+    font-size: 1rem !important;
+  }
+}
+
+@media (max-height: 700px) {
+  .landing-header {
+    margin-bottom: 0.5rem !important;
+  }
+
+  .search-section {
+    margin-bottom: 0.5rem !important;
+  }
+
+  .cuisine-selection {
+    margin-bottom: 0.75rem !important;
+  }
+}
+/* Make search icon clickable */
+.search-icon {
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease !important;
+}
+
+.search-icon:hover {
+  opacity: 1 !important;
+  transform: translateY(-50%) scale(1.15) !important;
+}
+
+/* Results View - Ensure single screen fit */
+.results-view {
+  height: 100vh !important;
+  max-height: 100vh !important;
+  overflow: hidden !important;
+}
+
+.main-content {
+  height: calc(100vh - 70px) !important;
+  overflow: hidden !important;
+}
+
+.restaurant-list {
+  overflow-y: auto !important;
+  max-height: 100% !important;
+}
+/* ==================== Decision Helper Features ==================== */
+
+/* Open Now Toggle */
+.filter-options {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.toggle-checkbox {
+  display: none;
+}
+
+.toggle-slider {
+  position: relative;
+  width: 50px;
+  height: 26px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 34px;
+  transition: background 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.toggle-slider::before {
+  content: '';
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  bottom: 2px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.toggle-checkbox:checked + .toggle-slider {
+  background: #6366f1;
+  border-color: #6366f1;
+}
+
+.toggle-checkbox:checked + .toggle-slider::before {
+  transform: translateX(24px);
+}
+
+.toggle-label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+/* Surprise Me Button */
+.btn-surprise {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-surprise::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.5s;
+}
+
+.btn-surprise:hover::before {
+  left: 100%;
+}
+
+.btn-surprise:hover:not(:disabled) {
+  background: linear-gradient(135deg, #f5576c 0%, #f093fb 100%);
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* Pick One Button */
+.btn-pick-one {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-pick-one:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.nav-actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+/* Highlighted Restaurant Card */
+.restaurant-card.highlighted {
+  border: 3px solid #f5576c !important;
+  background: linear-gradient(135deg, rgba(240, 147, 251, 0.1), rgba(245, 87, 108, 0.1)) !important;
+  animation: pulse-glow 2s ease-in-out infinite;
+  transform: translateX(-8px);
+  box-shadow: 0 0 20px rgba(245, 87, 108, 0.5) !important;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(245, 87, 108, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(245, 87, 108, 0.8);
+  }
+}
+
+/* Closed Restaurant Badge */
+.restaurant-card .status.closed {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+  font-weight: 600;
+}
+/* Restaurant Card Photos */
+.card-photo {
+  width: 100%;
+  height: 140px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 12px 12px 0 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-photo-placeholder {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-content {
+  padding: 1rem;
+}
+
+/* Update restaurant card to accommodate photo */
+.restaurant-card {
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+.restaurant-card .card-header {
+  margin-bottom: 0.5rem;
+}

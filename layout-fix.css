@@ -1,0 +1,24 @@
+﻿
+/* CRITICAL: Fix restaurant panel to prevent map scaling */
+.restaurant-panel {
+  height: 100% !important;
+  max-height: 100% !important;
+  overflow: hidden !important;
+}
+
+.panel-header {
+  flex-shrink: 0 !important;
+}
+
+.restaurant-list {
+  flex: 1 !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  height: 0 !important; /* Critical: forces flex to work properly */
+}
+
+.map-container {
+  height: 100% !important;
+  max-height: 100% !important;
+  flex-shrink: 0 !important;
+}
