@@ -1,140 +1,15 @@
-﻿<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Find the best restaurants near you with our interactive restaurant finder. Filter by cuisine type and explore nearby dining options.">
-    <title>What to Eat - Find Restaurants Near You</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="compact-overrides.css">
-    <link rel="stylesheet" href="layout-fix.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>client</title>
 </head>
 
 <body>
-    <!-- Landing Screen -->
-    <div id="landingScreen" class="landing-screen">
-        <div class="landing-container">
-            <header class="landing-header">
-                <h1 class="landing-title">What to Eat? </h1>
-                <p class="landing-subtitle">Find amazing restaurants near you</p>
-            </header>
-
-            <div class="search-section">
-                <h2 class="section-title">Search for specific food</h2>
-                <div class="search-input-wrapper">
-                    <input type="text" id="foodSearchInput" class="search-input"
-                        placeholder="e.g., pizza, sushi, tacos, burgers..." autocomplete="off" />
-                    <span class="search-icon">🔍</span>
-                </div>
-                <p class="search-hint">Or select from popular cuisines below</p>
-
-                <!-- Open Now Toggle -->
-                <div class="filter-options">
-                    <label class="toggle-container">
-                        <input type="checkbox" id="openNowToggle" class="toggle-checkbox">
-                        <span class="toggle-slider"></span>
-                        <span class="toggle-label">⏰ Open Now Only</span>
-                    </label>
-                </div>
-            </div>
-
-            <div class="cuisine-selection">
-                <h2 class="section-title">Popular Cuisines</h2>
-                <div id="cuisineGrid" class="cuisine-grid">
-                    <!-- Cuisine cards will be dynamically inserted here -->
-                </div>
-            </div>
-
-            <div class="action-buttons">
-                <button id="searchBtn" class="btn btn-primary" disabled>
-                    <span class="btn-icon">🔍</span>
-                    Search Restaurants
-                </button>
-                <button id="surpriseMeBtn" class="btn btn-surprise">
-                    <span class="btn-icon">🎲</span>
-                    Surprise Me!
-                </button>
-                <button id="exploreBtn" class="btn btn-secondary">
-                    <span class="btn-icon">🗺️</span>
-                    Explore Map
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Results View -->
-    <div id="resultsView" class="results-view hidden">
-        <!-- Top Navigation Bar -->
-        <nav class="top-nav">
-            <div class="nav-content">
-                <button id="backBtn" class="btn-back">
-                    <span></span> Back
-                </button>
-                <h1 class="nav-title">What to Eat</h1>
-                <div class="nav-actions">
-                    <button id="pickOneBtn" class="btn btn-pick-one">
-                        Pick One
-                    </button>
-                    <button id="modeToggle" class="btn-toggle">
-                        <span id="modeToggleText">Show All</span>
-                    </button>
-                </div>
-            </div>
-        </nav>
-
-        <!-- Main Content Area -->
-        <div class="main-content">
-            <!-- Map Container -->
-            <div id="map" class="map-container"></div>
-
-            <!-- Restaurant List Panel -->
-            <div class="restaurant-panel">
-                <div class="panel-header">
-                    <h2 id="resultsTitle">Nearby Restaurants</h2>
-                    <span id="resultsCount" class="results-count">0 results</span>
-                </div>
-
-                <div id="restaurantList" class="restaurant-list">
-                    <!-- Loading state -->
-                    <div id="loadingState" class="loading-state">
-                        <div class="spinner"></div>
-                        <p>Finding restaurants near you...</p>
-                    </div>
-
-                    <!-- Empty state -->
-                    <div id="emptyState" class="empty-state hidden">
-                        <span class="empty-icon"></span>
-                        <p>No restaurants found</p>
-                        <small>Try adjusting your filters or location</small>
-                    </div>
-
-                    <!-- Restaurant cards will be dynamically inserted here -->
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Error Modal -->
-    <div id="errorModal" class="modal hidden">
-        <div class="modal-content">
-            <h3 class="modal-title"> Error</h3>
-            <p id="errorMessage" class="modal-message"></p>
-            <button id="closeErrorBtn" class="btn btn-primary">OK</button>
-        </div>
-    </div>
-
-    <!-- Scripts -->
-    <script src="config.js"></script>
-    <script src="config.local.js"></script>
-    <script src="mapHandler.js"></script>
-    <script src="restaurantService.js"></script>
-    <script src="filterManager.js"></script>
-    <script src="uiManager.js"></script>
-    <script src="app.js"></script>
-
-    <!-- Google Maps API - Will be loaded dynamically by app.js -->
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
 </body>
 
 </html>
